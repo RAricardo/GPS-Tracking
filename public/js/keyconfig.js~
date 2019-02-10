@@ -1,0 +1,3 @@
+var config = {
+    GOOGLE_KEY: 'AIzaSyDOX4493zF6jjUqA-RtMijo82w1S70rFfk',
+}
