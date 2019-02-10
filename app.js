@@ -10,7 +10,7 @@ var express = require("express"),
     indexRoutes = require("./routes/index");
     app = express();
 
-mongoose.connect('mongodb://localhost/trackingDB', { useNewUrlParser: true });
+mongoose.connect('mongodb://db/trackingDB', { useNewUrlParser: true });
 
 process.env.PORT = process.env.PORT || 3000;
 app.use(methodOverride("_method"));
