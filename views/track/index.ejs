@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 border d-flex flex-column">
+            <a href="#" id="botonTracking" class="btn btn-outline-primary m-1">Empezar Tracking</a>
+            <div class="row">
+                <div class="col-md-6 d-flex flex-center">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre de Ruta">
+                </div>
+                <div class="col-md-6 d-flex flex-center">
+                    <a href="#" id="botonParar" class="btn btn-outline-primary m-1">Guardar Ruta</a>
+                </div>
+            </div>
+            <a href="#" class="btn btn-outline-primary m-1">Volver</a>
+        </div>
+    </div>
+</div>
+<script src="/js/lib/jquery-3.3.1.min.js"></script>
+<script src="/js/obtenerPuntos.js" async defer></script>
+
+<% include ../partials/footer %>

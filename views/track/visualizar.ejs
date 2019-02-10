@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+<h1>Elija su ruta</h1>
+<select id="select" name="option">
+    <option>Seleccione Ruta</option>
+    <% user.rutas.forEach(function(ruta){%>
+    <option value="<%=ruta.nombre%>"><%=ruta.nombre%></option>
+    <%})%>
+</select>
+<button id="botonVer" class="btn btn-info btn-lg">Cargar Ruta</button>
+
+<button id="botonDibujar" class="btn btn-info btn-lg">
+    Mostrar Ruta</button>
+<div id="map" style="width:100%;height:400px;display: block;margin-left: auto;margin-right: auto;"></div>
+<% include ../partials/footer %>
