@@ -1,17 +1,20 @@
-version: "2"
+#version: "2"
 services:
-  app:
-    container_name: app
-    restart: always
+  web:
     build: .
+    depends_on:
+    - db
     ports:
-      - "3000:3000"
-    links:
-      - mongo
-  mongo:
-    container_name: mongo
-    image: mongo
+    - "8000:8000"
     volumes:
-      - ./data:/data/db
-    ports:
-      - "27017:27017"
+    - .:/usr/src/app
+    - /usr/src/app/node_modules
+  db:
+    image: mongo
+    expose:
+    - "27017"
+    volumes:
+    - mongodata:/data/db
+
+volumes:
+  mongodata:
