@@ -12,7 +12,7 @@ services:
     depends_on:
       - nodeapp
   nodeapp:
-    container-name: nodeapp
+    container_name: nodeapp
     build: .
     depends_on:
     - db
