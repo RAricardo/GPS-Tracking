@@ -1,5 +1,5 @@
 var valores = [];
-console.log(config.GOOGLE_KEY);
+
 var link = $("#googleAPI").attr("src");
 $("#googleAPI").attr("src", link + config.GOOGLE_KEY);
 
@@ -27,7 +27,7 @@ $("#botonDibujar").click(function(e){
 
 function initMap(valores) {
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
+      zoom: 20,
       center: {lat: valores[0].lat, lng: valores[0].lng},
       mapTypeId: 'terrain',
       gestureHandling: 'cooperative'
@@ -42,4 +42,4 @@ function initMap(valores) {
     });
 
     flightPath.setMap(map);
-  }
+}
