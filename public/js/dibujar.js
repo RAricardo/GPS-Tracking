@@ -1,7 +1,10 @@
 var valores = [];
 
 var link = $("#googleAPI").attr("src");
+console.log(link + config.GOOGLE_KEY);
 $("#googleAPI").attr("src", link + config.GOOGLE_KEY);
+
+console.log(link + config.GOOGLE_KEY);
 
 $("#botonVer").click(function () {
   var nombre = $("#selectRuta").val();
