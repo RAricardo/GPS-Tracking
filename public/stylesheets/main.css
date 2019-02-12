@@ -6,3 +6,8 @@ body {
     height: 400px;
     width: 700px;
 }
+
+select {
+    height: 45px;
+    vertical-align: middle;
+}

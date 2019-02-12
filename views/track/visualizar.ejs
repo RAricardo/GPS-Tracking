@@ -1,14 +1,52 @@
 <% include ../partials/header %>
-<h1>Elija su ruta</h1>
-<select id="select" name="option">
-    <option>Seleccione Ruta</option>
-    <% user.rutas.forEach(function(ruta){%>
-    <option value="<%=ruta.nombre%>"><%=ruta.nombre%></option>
-    <%})%>
-</select>
-<button id="botonVer" class="btn btn-info btn-lg">Cargar Ruta</button>
-
-<button id="botonDibujar" class="btn btn-info btn-lg">
-    Mostrar Ruta</button>
-<div id="map" style="width:100%;height:400px;display: block;margin-left: auto;margin-right: auto;"></div>
-<% include ../partials/footer %>
+<div class="container">
+    <div class="alert alert-success alert-dismissible fade" role="alert">
+        <strong>Bien Hecho!</strong> Tu ruta ha sido compartida!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">A quién le quieres compartir la ruta?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                            <select class="mr-3" id="selectuser" name="option">
+                                    <option>Seleccione Usuario</option>
+                                    <% users.forEach(function(usuario){ %>
+                                    <option value="<%=usuario.username%>"><%=usuario.username%></option>
+                                    <%})%>
+                            </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="botonCompartir" type="button" class="btn btn-primary" data-dismiss="modal">Compartir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>Elija su ruta</h1>
+    <div class="mb-3">
+        <select class="mr-3" id="selectRuta" name="option">
+            <option>Seleccione Ruta</option>
+            <% user.rutas.forEach(function(ruta){%>
+            <option value="<%=ruta.nombre%>"><%=ruta.nombre%></option>
+            <%})%>
+        </select>
+        <button id="botonVer" class="btn btn-info btn-lg">Cargar Ruta</button>
+        <button id="botonGuardar" type="button" class="btn btn-lg btn-primary m-1" data-toggle="modal"
+        data-target="#exampleModalCenter">
+        Compartir Ruta </button>
+    </div>
+    <div id="map" style="width:100%;height:400px;display: block;margin-left: auto;margin-right: auto;"></div>
+    <% include ../partials/footer %>
+</div>
