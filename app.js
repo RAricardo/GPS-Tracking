@@ -11,7 +11,8 @@ var express = require("express"),
     app = express();
 
 mongoose.connect('mongodb://db/trackingDB', { useNewUrlParser: true });
-
+//mongoose.connect('mongodb://localhost/trackingDB', { useNewUrlParser: true });
+mongoose.connect('', { useNewUrlParser: true });
 process.env.PORT = process.env.PORT || 8000;
 app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({ extended: true }));
